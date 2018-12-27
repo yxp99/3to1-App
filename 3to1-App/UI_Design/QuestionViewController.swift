@@ -12,7 +12,7 @@ class QuestionViewController: UIViewController {
 
 
     @IBOutlet weak var questionLabel: UILabel!
-    
+    var questionContent: String?
     @IBOutlet weak var countDownLabel: UILabel!
     
     var time = 10
@@ -21,7 +21,8 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        questionLabel.text = questionContent
         //Changes the background of the main view.
         self.view.addBackground(imageName: "Background.png")
         

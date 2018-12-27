@@ -7,10 +7,9 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController {
 
-
+    
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     
