@@ -1,20 +1,20 @@
 //
-//  QuestionViewController.swift
+//  testOnlyViewController.swift
 //  UI_Design
 //
-//  Created by Shadow Song on 12/25/18.
+//  Created by Shadow Song on 12/27/18.
 //  Copyright © 2018 3to1. All rights reserved.
 //
 
 import UIKit
 
-class QuestionViewController: UIViewController {
+class testOnlyViewController: UIViewController {
 
+    @IBOutlet weak var lbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //Changes the background of the main view.
-        self.view.addBackground(imageName: "Background.png")
+        lbl.text = "fucks"
+        // Do any additional setup after loading the view.
     }
     
 

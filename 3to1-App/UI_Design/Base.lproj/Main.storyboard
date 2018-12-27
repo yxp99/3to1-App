@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -303,14 +304,6 @@
                                 <rect key="frame" x="66" y="319" width="48" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mw2-1V-hyk">
-                                <rect key="frame" x="144" y="514" width="87" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdu-Zy-viL">
                                 <rect key="frame" x="131" y="483" width="112" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -319,15 +312,36 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mw2-1V-hyk">
+                                <rect key="frame" x="158" y="521" width="39" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYV-n8-jrD">
+                                <rect key="frame" x="197" y="520" width="16" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="MhA-Au-mmn"/>
+                    <connections>
+                        <outlet property="countDownLabel" destination="mw2-1V-hyk" id="2Xe-4G-rPy"/>
+                        <outlet property="questionLabel" destination="CPe-Dt-cSc" id="MJk-C8-s4z"/>
+                        <segue destination="otc-Nr-KYp" kind="show" identifier="questionToWait" id="AZV-o6-OPu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUl-Ax-drL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4660" y="1037"/>
+            <point key="canvasLocation" x="4534" y="1037"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="M91-hQ-63o">
@@ -620,6 +634,36 @@
             </objects>
             <point key="canvasLocation" x="-2410" y="-27"/>
         </scene>
+        <!--Test Only View Controller-->
+        <scene sceneID="2Wt-OG-KZJ">
+            <objects>
+                <viewController id="K6l-gr-FED" customClass="testOnlyViewController" customModule="_to1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p0j-jH-agZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="bA4-K5-UGS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aEf-Mh-IUC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFA-LG-N5E">
+                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="lbl" destination="iFA-LG-N5E" id="3Zs-EE-HYr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5U4-eg-Hrk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3185" y="-1558"/>
+        </scene>
         <!--Signup View Controller-->
         <scene sceneID="faf-O4-Th4">
             <objects>
@@ -860,10 +904,10 @@
             </objects>
             <point key="canvasLocation" x="399" y="1037"/>
         </scene>
-        <!--View Controller-->
+        <!--Wait Question View Controller-->
         <scene sceneID="Jbo-iJ-Idm">
             <objects>
-                <viewController id="otc-Nr-KYp" customClass="ViewController" customModule="_to1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="otc-Nr-KYp" customClass="waitQuestionViewController" customModule="_to1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HGj-si-BkI"/>
                         <viewControllerLayoutGuide type="bottom" id="Ebk-MT-rvB"/>
@@ -887,7 +931,7 @@
                                 <color key="tintColor" red="0.9999235272" green="1" blue="0.99988299609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Question Here"/>
                                 <connections>
-                                    <segue destination="Fxw-td-AnT" kind="show" id="ENS-vD-RQ1"/>
+                                    <action selector="clickQuestionHere:" destination="otc-Nr-KYp" eventType="touchUpInside" id="042-Le-ft8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -903,8 +947,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="leftBarButton" destination="UJI-vK-gT8" id="l9F-98-1zE"/>
-                        <outlet property="rightBarButton" destination="R9f-Bp-uLB" id="8jg-bu-AyD"/>
+                        <outlet property="leftBarButton" destination="UJI-vK-gT8" id="XIE-EL-wf1"/>
+                        <outlet property="rightBarButton" destination="R9f-Bp-uLB" id="C5M-kz-UVs"/>
+                        <segue destination="Fxw-td-AnT" kind="show" identifier="waitToQuestion" id="g3w-oP-O9p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUh-PX-A3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -914,7 +959,7 @@
         <!--Refresh Controller-->
         <scene sceneID="x9L-9U-pVk">
             <objects>
-                <viewController id="O7u-RU-TQq" customClass="RefreshController" customModule="ProtoType_2_5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="O7u-RU-TQq" customClass="RefreshController" customModule="_to1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Br4-dR-WNG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1093,7 +1138,7 @@
         <!--Result Controller-->
         <scene sceneID="rdj-go-jsX">
             <objects>
-                <viewController id="GYs-hj-mVf" customClass="ResultController" customModule="ProtoType_2_5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GYs-hj-mVf" customClass="ResultController" customModule="_to1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c8H-Xk-lhT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1127,7 +1172,7 @@
         <!--Result Controller-->
         <scene sceneID="K5e-Pg-hLl">
             <objects>
-                <viewController id="vDx-uA-zWh" customClass="ResultController" customModule="ProtoType_2_5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vDx-uA-zWh" customClass="ResultController" customModule="_to1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dWH-0J-omA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1174,7 +1219,8 @@
         <image name="score card unselected-Cropped" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="AZV-o6-OPu"/>
         <segue reference="WxT-vo-UQK"/>
-        <segue reference="CBc-0T-FBJ"/>
+        <segue reference="kTA-4w-JZz"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,9 +14,11 @@
 		2388B1E221CEE22200E87667 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2388B1E121CEE22200E87667 /* SWRevealViewController.m */; };
 		2388B1E421CEE56700E87667 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2388B1E321CEE56700E87667 /* ViewController.swift */; };
 		23BBC79221CF537300F9A788 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BBC79121CF537300F9A788 /* TableViewController.swift */; };
+		862D8F8021D587130009EDC8 /* waitQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D8F7F21D587130009EDC8 /* waitQuestionViewController.swift */; };
 		8653111921D2D4AF009B3C49 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8653111821D2D4AF009B3C49 /* QuestionViewController.swift */; };
 		8653111B21D2E006009B3C49 /* PlainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8653111A21D2E006009B3C49 /* PlainViewController.swift */; };
 		8653111D21D2EE22009B3C49 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8653111C21D2EE22009B3C49 /* HelperExtensions.swift */; };
+		868476CC21D5817900D3FBE1 /* testOnlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868476CB21D5817900D3FBE1 /* testOnlyViewController.swift */; };
 		869548E721D40ACD00EABBDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869548E621D40ACD00EABBDF /* LoginViewController.swift */; };
 		869548EA21D40D3200EABBDF /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869548E921D40D3200EABBDF /* InitialViewController.swift */; };
 		869548EC21D40E9D00EABBDF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869548EB21D40E9D00EABBDF /* SignupViewController.swift */; };
@@ -39,9 +41,11 @@
 		23BBC79121CF537300F9A788 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		544EF244E38EA54CEAF4CA3E /* Pods-UI_Design.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI_Design.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UI_Design/Pods-UI_Design.debug.xcconfig"; sourceTree = "<group>"; };
 		5F2F9197CCF06192489D9E22 /* Pods-UI_Design.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI_Design.release.xcconfig"; path = "Pods/Target Support Files/Pods-UI_Design/Pods-UI_Design.release.xcconfig"; sourceTree = "<group>"; };
+		862D8F7F21D587130009EDC8 /* waitQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waitQuestionViewController.swift; sourceTree = "<group>"; };
 		8653111821D2D4AF009B3C49 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		8653111A21D2E006009B3C49 /* PlainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainViewController.swift; sourceTree = "<group>"; };
 		8653111C21D2EE22009B3C49 /* HelperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
+		868476CB21D5817900D3FBE1 /* testOnlyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testOnlyViewController.swift; sourceTree = "<group>"; };
 		869548E621D40ACD00EABBDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		869548E921D40D3200EABBDF /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		869548EB21D40E9D00EABBDF /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				23BBC79121CF537300F9A788 /* TableViewController.swift */,
 				8653111A21D2E006009B3C49 /* PlainViewController.swift */,
 				2388B1D121CED8B700E87667 /* Main.storyboard */,
+				862D8F7F21D587130009EDC8 /* waitQuestionViewController.swift */,
+				868476CB21D5817900D3FBE1 /* testOnlyViewController.swift */,
 				2388B1D621CED8BB00E87667 /* LaunchScreen.storyboard */,
 				2388B1D421CED8BB00E87667 /* Assets.xcassets */,
 				8653111821D2D4AF009B3C49 /* QuestionViewController.swift */,
@@ -262,10 +268,12 @@
 				8653111B21D2E006009B3C49 /* PlainViewController.swift in Sources */,
 				869548EC21D40E9D00EABBDF /* SignupViewController.swift in Sources */,
 				869548EE21D4106600EABBDF /* RoundedWhiteButton.swift in Sources */,
+				862D8F8021D587130009EDC8 /* waitQuestionViewController.swift in Sources */,
 				2388B1CE21CED8B700E87667 /* AppDelegate.swift in Sources */,
 				869548EA21D40D3200EABBDF /* InitialViewController.swift in Sources */,
 				8653111921D2D4AF009B3C49 /* QuestionViewController.swift in Sources */,
 				869548E721D40ACD00EABBDF /* LoginViewController.swift in Sources */,
+				868476CC21D5817900D3FBE1 /* testOnlyViewController.swift in Sources */,
 				8653111D21D2EE22009B3C49 /* HelperExtensions.swift in Sources */,
 				2388B1E221CEE22200E87667 /* SWRevealViewController.m in Sources */,
 				23BBC79221CF537300F9A788 /* TableViewController.swift in Sources */,
