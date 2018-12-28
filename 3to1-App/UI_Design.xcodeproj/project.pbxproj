@@ -38,7 +38,7 @@
 		2388B1E021CEE22100E87667 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		2388B1E121CEE22200E87667 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		2388B1E321CEE56700E87667 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		23BBC79121CF537300F9A788 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		23BBC79121CF537300F9A788 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		544EF244E38EA54CEAF4CA3E /* Pods-UI_Design.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI_Design.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UI_Design/Pods-UI_Design.debug.xcconfig"; sourceTree = "<group>"; };
 		5F2F9197CCF06192489D9E22 /* Pods-UI_Design.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI_Design.release.xcconfig"; path = "Pods/Target Support Files/Pods-UI_Design/Pods-UI_Design.release.xcconfig"; sourceTree = "<group>"; };
 		862D8F7F21D587130009EDC8 /* waitQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = waitQuestionViewController.swift; sourceTree = "<group>"; };
@@ -95,23 +95,20 @@
 		2388B1CC21CED8B700E87667 /* UI_Design */ = {
 			isa = PBXGroup;
 			children = (
+				86294B1221D6B6F600FE45C1 /* Side Menu */,
+				86294B1121D6B69500FE45C1 /* QuestionScreen */,
 				869548E821D40B7500EABBDF /* Login & SignUp */,
 				2388B1E321CEE56700E87667 /* ViewController.swift */,
-				8653111C21D2EE22009B3C49 /* HelperExtensions.swift */,
 				2388B1CD21CED8B700E87667 /* AppDelegate.swift */,
-				23BBC79121CF537300F9A788 /* TableViewController.swift */,
-				8653111A21D2E006009B3C49 /* PlainViewController.swift */,
+				8653111C21D2EE22009B3C49 /* HelperExtensions.swift */,
 				2388B1D121CED8B700E87667 /* Main.storyboard */,
-				862D8F7F21D587130009EDC8 /* waitQuestionViewController.swift */,
-				868476CB21D5817900D3FBE1 /* testOnlyViewController.swift */,
-				2388B1D621CED8BB00E87667 /* LaunchScreen.storyboard */,
-				2388B1D421CED8BB00E87667 /* Assets.xcassets */,
-				8653111821D2D4AF009B3C49 /* QuestionViewController.swift */,
-				2388B1E021CEE22100E87667 /* SWRevealViewController.h */,
-				2388B1E121CEE22200E87667 /* SWRevealViewController.m */,
-				2388B1D921CED8BB00E87667 /* Info.plist */,
 				862D8F8121D58D7C0009EDC8 /* GoogleService-Info.plist */,
 				2388B1DF21CEE20F00E87667 /* UI_Design-Bridging-Header.h */,
+				2388B1D621CED8BB00E87667 /* LaunchScreen.storyboard */,
+				2388B1D421CED8BB00E87667 /* Assets.xcassets */,
+				2388B1D921CED8BB00E87667 /* Info.plist */,
+				8653111A21D2E006009B3C49 /* PlainViewController.swift */,
+				868476CB21D5817900D3FBE1 /* testOnlyViewController.swift */,
 			);
 			path = UI_Design;
 			sourceTree = "<group>";
@@ -123,6 +120,25 @@
 				5F2F9197CCF06192489D9E22 /* Pods-UI_Design.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		86294B1121D6B69500FE45C1 /* QuestionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8653111821D2D4AF009B3C49 /* QuestionViewController.swift */,
+				862D8F7F21D587130009EDC8 /* waitQuestionViewController.swift */,
+			);
+			path = QuestionScreen;
+			sourceTree = "<group>";
+		};
+		86294B1221D6B6F600FE45C1 /* Side Menu */ = {
+			isa = PBXGroup;
+			children = (
+				23BBC79121CF537300F9A788 /* TableViewController.swift */,
+				2388B1E021CEE22100E87667 /* SWRevealViewController.h */,
+				2388B1E121CEE22200E87667 /* SWRevealViewController.m */,
+			);
+			path = "Side Menu";
 			sourceTree = "<group>";
 		};
 		869548E821D40B7500EABBDF /* Login & SignUp */ = {

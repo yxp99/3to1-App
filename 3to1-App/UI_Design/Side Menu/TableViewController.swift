@@ -15,20 +15,16 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
 
         //Changes the background of the main view.
-        let backgroundImage = UIImage(named: "MenuSlider2.png")
-        let imageView = UIImageView(image: backgroundImage)
-        self.tableView.backgroundView = imageView  
+        changeBackground()
         
         //Remove Separator lines
-        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        removeSeparatorLines()
         
         
     }
 
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("section: \(indexPath.section)")
-//        print("row: \(indexPath.row)")
         
         switch indexPath.row {
         case 0:

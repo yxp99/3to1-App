@@ -12,8 +12,9 @@ class QuestionViewController: UIViewController {
 
 
     @IBOutlet weak var questionLabel: UILabel!
-    var questionContent: String?
     @IBOutlet weak var countDownLabel: UILabel!
+    
+    var questionContent: String?
     
     var time = 10
     var timer = Timer()

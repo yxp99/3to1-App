@@ -128,3 +128,16 @@ extension UIView {
     }
 }
 
+extension UITableViewController{
+    func changeBackground(){
+        //Changes the background of the main view.
+        let backgroundImage = UIImage(named: "MenuSlider2.png")
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+    }
+    
+    func removeSeparatorLines(){
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+    }
+}
+
