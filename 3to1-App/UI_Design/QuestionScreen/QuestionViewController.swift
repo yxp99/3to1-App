@@ -59,7 +59,7 @@ class QuestionViewController: UIViewController {
     
     func sessionOver(){
         //Add code here for What to do after session is over.
-        self.performSegue(withIdentifier: "questionToWait", sender: self)
+        //self.performSegue(withIdentifier: "questionToWait", sender: self)
     }
     //************************Timer Section Over*****************************//
 }

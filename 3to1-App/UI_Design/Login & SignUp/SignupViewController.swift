@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class SignupViewController: UIViewController, UITextFieldDelegate {
 
@@ -155,7 +156,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func handleSignUp() {
-        guard let username = usernameField.text else { return }
+        //guard let username = usernameField.text else { return }
         guard let email = emailField.text else { return }
         guard let pass = passwordField.text else { return }
         
@@ -163,33 +164,32 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         continueButton.setTitle("", for: .normal)
         activityView.startAnimating()
         
-//        Auth.auth().createUser(withEmail: email, password: pass) { user, error in
-//            if error == nil && user != nil {
-//                print("User created!")
-//
-//                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-//                changeRequest?.displayName = username
-//
-//                changeRequest?.commitChanges { error in
-//                    if error == nil {
-//                        print("User display name changed!")
-//                        self.dismiss(animated: false, completion: nil)
-//                    } else {
-//                        print("Error: \(error!.localizedDescription)")
-//                    }
-//                }
-//
-//            } else {
-//                print("Error: \(error!.localizedDescription)")
-//            }
-//        }
-        Auth.auth().createUser(withEmail: email, password: pass){(user, error) in
-            if error == nil && user != nil{
+        Auth.auth().createUser(withEmail: email, password: pass){(res, error) in
+            if error == nil && res != nil{
                 //User sign up success
                 //print("USER logged in")
                 //Do w/e you should after use log in
                 
-                //Sign out here, get back to the initial screen and sign in again. 
+                // Get a reference to the database service
+                guard let uid = res?.user.uid else{
+                    return
+                }
+                
+                //successfully authenticated user
+                let ref = Database.database().reference()
+                let usersReference = ref.child("DB1_0/User").child(uid)
+                let values = ["email": email]
+                usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                    
+                    if let err = err {
+                        print(err)
+                        return
+                    }
+                    
+                    print("Saved user successfully into Firebase db")
+                    
+                })
+
                 try! Auth.auth().signOut()
                 
                 let alertController = UIAlertController(title: "Welcome", message: "Account Created", preferredStyle: .alert)
