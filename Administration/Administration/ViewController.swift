@@ -11,6 +11,9 @@ import Firebase
 
 class ViewController: UIViewController {
 
+    var questionContent = "nil"
+    var countDownTime = 10
+    
     @IBOutlet weak var fieldGoalButton: DLRadioButton!
     @IBOutlet weak var timeButton: DLRadioButton!
     override func viewDidLoad() {
@@ -26,22 +29,22 @@ class ViewController: UIViewController {
 
     @IBAction func clickQuestion(_ sender: DLRadioButton) {
         if sender.tag == 1{
-            print("field goal")
+            questionContent = "Filed Goal"
         }
         else{
-            print("3rd down")
+            questionContent = "3rd Down"
         }
     }
     
     @IBAction func clickTimeButton(_ sender: DLRadioButton) {
         if sender.tag == 3{
-            print("10s")
+            countDownTime = 10
         }
         else if sender.tag == 4{
-            print("15s")
+            countDownTime = 15
         }
         else{
-            print("20s")
+            countDownTime = 20
         }
     }
     
@@ -50,7 +53,7 @@ class ViewController: UIViewController {
         
         ref = Database.database().reference()
         
-        ref.child("/DB1_0/Game/game(idFDFDS)/CurrentQuestion/").setValue(["content": "this content", "countDown": 5])
+        ref.child("/DB1_0/Game/game(idFDFDS)/CurrentQuestion/").setValue(["content": questionContent, "countDown": countDownTime])
     }
     
 }
