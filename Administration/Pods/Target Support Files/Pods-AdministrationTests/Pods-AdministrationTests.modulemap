@@ -1,0 +1,6 @@
+framework module Pods_AdministrationTests {
+  umbrella header "Pods-AdministrationTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
