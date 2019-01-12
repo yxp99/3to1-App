@@ -351,6 +351,7 @@
                         <outlet property="countDownLabel" destination="mw2-1V-hyk" id="2Xe-4G-rPy"/>
                         <outlet property="questionLabel" destination="CPe-Dt-cSc" id="MJk-C8-s4z"/>
                         <segue destination="Zgs-qp-1st" kind="show" id="npw-Re-7k1"/>
+                        <segue destination="otc-Nr-KYp" kind="show" identifier="questionToWait" id="PAz-0a-aaE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUl-Ax-drL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1068,8 +1069,7 @@
         <image name="backArrow" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="npw-Re-7k1"/>
-        <segue reference="eR7-XP-oxi"/>
+        <segue reference="PAz-0a-aaE"/>
         <segue reference="WxT-vo-UQK"/>
         <segue reference="kTA-4w-JZz"/>
     </inferredMetricsTieBreakers>

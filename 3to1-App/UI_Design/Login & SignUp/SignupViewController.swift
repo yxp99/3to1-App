@@ -166,9 +166,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
         Auth.auth().createUser(withEmail: email, password: pass){(res, error) in
             if error == nil && res != nil{
-                //User sign up success
-                //print("USER logged in")
-                //Do w/e you should after use log in
                 
                 // Get a reference to the database service
                 guard let uid = res?.user.uid else{

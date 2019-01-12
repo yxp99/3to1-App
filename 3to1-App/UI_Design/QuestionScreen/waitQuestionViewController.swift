@@ -12,6 +12,9 @@ class waitQuestionViewController: UIViewController {
     // Variables
     var question = ""
     var gameID = "0"
+    
+    var questionHere = false
+    
     var rootref : DatabaseReference!
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
@@ -34,25 +37,62 @@ class waitQuestionViewController: UIViewController {
         
         /* Refer to the firebase database */
         rootref = Database.database().reference()
-
+        
+//        let NewQuestionRef = rootref.child("/DB1_0/Game/game(idFDFDS)/CurrentQuestion/")
+//        NewQuestionRef.observe(.value){ (snapshot) in
+//            let questionDict = snapshot.value as? [String : AnyObject] ?? [:]
+//            let questionSB = questionDict["content"] as? String
+//            self.question = questionSB ??  ""
+//            if self.question != ""{
+//                return self.performSegue(withIdentifier: "waitToQuestion", sender: self)
+//                //self.question = ""
+//
+//            }
+//
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let NewQuestionRef = rootref.child("Game").child("Game_ID_"+gameID).child("CurrentQuestion")
+        
+        let NewQuestionRef = rootref.child("/DB1_0/Game/game(idFDFDS)/CurrentQuestion/")
         NewQuestionRef.observe(.value){ (snapshot) in
             let questionDict = snapshot.value as? [String : AnyObject] ?? [:]
-            let questionSB = questionDict["Q_ID"] as? String
+            let questionSB = questionDict["content"] as? String
             self.question = questionSB ??  ""
             if self.question != ""{
+                //questionHere = false
+                
+                //This FUCKIN line removes the FUCKING OBSERVER. SUPER IMPORTANT LINE
+                NewQuestionRef.removeAllObservers()
+                
                 self.performSegue(withIdentifier: "waitToQuestion", sender: self)
-                self.question = ""
-
+                //self.question = ""
             }
-            
-        }
 
+        }
     }
+    
+    
+    //Don't delete this part
+    //[read only once]
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        let NewQuestionRef = rootref.child("/DB1_0/Game/game(idFDFDS)/CurrentQuestion/")
+//        NewQuestionRef.observeSingleEvent(of: .value, with: { (snapshot) in
+//            // Get user value
+//            let questionDict = snapshot.value as? NSDictionary
+//            let questionSB = questionDict?["content"] as? String ?? ""
+//            self.question = questionSB
+//            if self.question != ""{
+//                return self.performSegue(withIdentifier: "waitToQuestion", sender: self)
+//                //self.question = ""
+//
+//            }
+//
+//        })
+//
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "waitToQuestion"{
@@ -66,5 +106,24 @@ class waitQuestionViewController: UIViewController {
     }
     
 
+    //DO NOT DELETE THIS PART
+    //[OLD VERSION with old database]
+//        override func viewDidAppear(_ animated: Bool) {
+//            super.viewDidAppear(animated)
+//            let NewQuestionRef = rootref.child("Game").child("Game_ID_"+gameID).child("CurrentQuestion")
+//            NewQuestionRef.observe(.value){ (snapshot) in
+//                let questionDict = snapshot.value as? [String : AnyObject] ?? [:]
+//                let questionSB = questionDict["Q_ID"] as? String
+//                self.question = questionSB ??  ""
+//                if self.question != ""{
+//                    self.performSegue(withIdentifier: "waitToQuestion", sender: self)
+//                    self.question = ""
+//
+//                }
+//
+//            }
+//
+//        }
+    
 
 }
