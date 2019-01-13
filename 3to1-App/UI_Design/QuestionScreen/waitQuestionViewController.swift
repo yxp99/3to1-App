@@ -81,14 +81,7 @@ class waitQuestionViewController: UIViewController {
         
         let NewQuestionRef = rootref.child("/DB1_0/Game/game(idFDFDS)/CurrentQuestion/")
         NewQuestionRef.observe(.value){ (snapshot) in
-            let questionDict = snapshot.value as? [String : AnyObject] ?? [:]
-            let questionSB = questionDict["content"] as? String
-            self.question = questionSB ??  ""
-            if self.question != ""{
-                //questionHere = false
-                
-                //This FUCKIN line removes the FUCKING OBSERVER. SUPER IMPORTANT LINE
-                NewQuestionRef.removeAllObservers()
+
                 
                 self.performSegue(withIdentifier: "waitToQuestion", sender: self)
                 //self.question = ""
