@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseDatabase
+
 
 class QuestionViewController: UIViewController {
 
@@ -69,8 +69,8 @@ class QuestionViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let rootref = Database.database().reference()
-        let NewCountDownRef = rootref.child("/DB1_0/Game/game(idFDFDS)/CurrentQuestion/")
-        NewCountDownRef.observe(.value){ (snapshot) in
+
+  
             let countDownDict = snapshot.value as? [String : AnyObject] ?? [:]
             let countDownSB = countDownDict["countDown"] as? Int
             if countDownSB != nil{
