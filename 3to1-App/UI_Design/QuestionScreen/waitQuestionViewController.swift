@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseDatabase
+
 class waitQuestionViewController: UIViewController {
     // Variables
     var question = ""
@@ -82,7 +82,36 @@ class waitQuestionViewController: UIViewController {
         let NewQuestionRef = rootref.child("/DB1_0/Game/game(idFDFDS)/CurrentQuestion/")
         NewQuestionRef.observe(.value){ (snapshot) in
 
+            //TODO another variant that returns `nil` if result would start with `..`
+            public func relative(to base: Path) -> String {
+                // Split the two paths into their components.
+                // FIXME: The is needs to be optimized to avoid unncessary copying.
+                let pathComps = (string as NSString).pathComponents
+                let baseComps = (base.string as NSString).pathComponents
                 
+                // It's common for the base to be an ancestor, so try that first.
+                if pathComps.starts(with: baseComps) {
+                    // Special case, which is a plain path without `..` components.  It
+                    // might be an empty path (when self and the base are equal).
+                    let relComps = pathComps.dropFirst(baseComps.count)
+                    return relComps.joined(separator: "/")
+                } else {
+                    // General case, in which we might well need `..` components to go
+                    // "up" before we can go "down" the directory tree.
+                    var newPathComps = ArraySlice(pathComps)
+                    var newBaseComps = ArraySlice(baseComps)
+                    while newPathComps.prefix(1) == newBaseComps.prefix(1) {
+                        // First component matches, so drop it.
+                        newPathComps = newPathComps.dropFirst()
+                        newBaseComps = newBaseComps.dropFirst()
+                    }
+                    // Now construct a path consisting of as many `..`s as are in the
+                    // `newBaseComps` followed by what remains in `newPathComps`.
+                    var relComps = Array(repeating: "..", count: newBaseComps.count)
+                    relComps.append(contentsOf: newPathComps)
+                    return relComps.joined(separator: "/")
+                }
+            }
                 self.performSegue(withIdentifier: "waitToQuestion", sender: self)
                 //self.question = ""
             }

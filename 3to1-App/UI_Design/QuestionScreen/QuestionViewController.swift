@@ -71,7 +71,30 @@ class QuestionViewController: UIViewController {
         let rootref = Database.database().reference()
 
   
-            let countDownDict = snapshot.value as? [String : AnyObject] ?? [:]
+            let countDownDict = snapshot.value as? [String : ] ?? [:]
+        public func basename(dropExtension: Bool = false) -> String {
+            let str = string as NSString
+            if !dropExtension {
+                return str.lastPathComponent
+            } else {
+                let ext = str.pathExtension
+                if !ext.isEmpty {
+                    return String(str.lastPathComponent.dropLast(ext.count + 1))
+                } else {
+                    return str.lastPathComponent
+                }
+            }
+        }
+        
+        public var isDirectory: Bool {
+            var isDir: ObjCBool = false
+            return FileManager.default.fileExists(atPath: string, isDirectory: &isDir) && isDir.boolValue
+        }
+        
+        public var isFile: Bool {
+            var isDir: ObjCBool = true
+            return FileManager.default.fileExists(atPath: string, isDirectory: &isDir) && !isDir.boolValue
+        }
             let countDownSB = countDownDict["countDown"] as? Int
             if countDownSB != nil{
                 self.countDown = String(countDownSB!)
@@ -83,7 +106,7 @@ class QuestionViewController: UIViewController {
             }
             else{
                 NewCountDownRef.removeAllObservers()
-                self.performSegue(withIdentifier: "questionToWait", sender: self)
+                self.performSegue(withIdentifier: "", sender: self)
             }
         }
         
